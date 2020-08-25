@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <header>
+        <h1>Overskrift</h1>
+    </header>
+
+
+    <main>
+
+        <h2>Underoverskrift</h2>
+        <section>
+
+            <article>
+                <img src="https://placeimg.com/500/500/any">
+                <h3>Article 1</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </article>
+
+            <article> <img src="https://placeimg.com/500/500/any">
+                <h3>Article 2</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>footertext</p>
+    </footer>
+
+    <script>
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+
+        overskrift.textContent = "Den nye overskrift er: Billeder";
+        console.log(overskrift.textContent);
+
+
+        const underoverskrift = document.querySelector("h2");
+        underoverskrift.textContent;
+        console.log(underoverskrift.textContent);
+
+        const artikel1 = document.querySelector("article:nth-child(1) p");
+        artikel1.textContent = "Her er den nye text, skrevet med textContent";
+
+        const artikel1overskrift = document.querySelector("article:nth-child(1) h3");
+        artikel1overskrift.textContent = "Her er den nye overskrift, skrevet med textContent";
+
+
+        const artikel2overskrift = document.querySelector("article:nth-child(2) h3");
+        artikel2overskrift.innerHTML = "Her er den <b>nye</b> overskrift, skrevet med <b>inner-html</b>";
+
+        const artikel2 = document.querySelector("article:nth-child(2) p");
+        artikel2.innerHTML = "Her er den <b>nye</b> text, skrevet med <b>inner-html</b>";
+
+        const footertext = document.querySelector("footer");
+        footertext.textContent;
+        console.log(footertext.textContent);
+    </script>
+</body></html>
