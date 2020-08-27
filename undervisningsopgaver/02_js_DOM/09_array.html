@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            color: green;
+        }
+
+        #display {
+            width: 20vw;
+            height: 25vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="display"></ul>
+
+    <script>
+        let playlist = ["sol", "sand", "vand", "måne", "sne", "is", "hav", "mad"];
+        playlist.forEach(sang => {
+            document.querySelector("#display").innerHTML += `${sang} <br>`;
+        })
+    </script>
+</body></html>
