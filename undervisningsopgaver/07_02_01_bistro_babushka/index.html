@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bistro Babushka</title>
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #e5e5e5;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .background {
+            background-image: url(imgs/fork.jpg);
+            min-height: 30vh;
+            width: 100%;
+            background-size: cover;
+            background-position: 50% 60%;
+        }
+
+        #overskrift {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0 0 0;
+            font-size: 3.5rem;
+            font-family: 'Russo One', sans-serif;
+            color: #980707;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            font-family: sans-serif;
+            color: #980707;
+
+        }
+
+        h2 {
+            font-family: 'Russo One', sans-serif;
+            letter-spacing: 1.5px;
+        }
+
+        p {
+            font-family: sans-serif;
+            font-size: 1rem;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 2.5vh;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #adadad,
+                -5px -5px 10px #ffffff;
+        }
+
+        .vareliste {
+            text-align: center;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            height: 100%;
+            cursor: pointer;
+
+        }
+
+        article {
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #adadad,
+                -5px -5px 10px #ffffff;
+        }
+
+        .background {
+            background-image: url(imgs/fork.jpg);
+            min-height: 40vh;
+            width: 100%;
+            background-size: cover;
+            background-position: 70%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+        }
+
+        .valgt {
+            background-color: #980707;
+            color: white;
+            border: 1px solid #980707;
+
+        }
+
+
+        #popup {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0 8);
+            display: none;
+            overflow: scroll;
+        }
+
+
+        .enkeltVare {
+            background: white;
+            width: 80vw;
+            padding: 50px 30px 50px 30px;
+            margin: 4rem auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 20px 80px 80px rgba(0, 0, 0, 0.7);
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+
+        .luk {
+            position: fixed;
+            top: 3.5em;
+            right: 2em;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 1em;
+            cursor: pointer;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 40px 20px 70px 10px rgba(0, 0, 0, 0.7);
+        }
+
+
+
+        /*****************************************************************/
+        @media screen and (min-width:768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 960px;
+                margin: 0 auto;
+            }
+
+            .vareliste {
+                display: grid;
+                grid-gap: 50px;
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .enkeltVare {
+                flex-direction: row;
+            }
+
+
+
+            nav {
+                display: flex;
+                justify-content: center;
+            }
+
+            .background {
+                background-image: url(imgs/fork.jpg);
+                min-height: 80vh;
+                width: 100%;
+                background-size: cover;
+                background-position: 36% 60%;
+
+            }
+
+
+            .filter {
+                display: flex;
+                justify-content: center;
+                margin: 2%;
+            }
+
+
+            .filter:hover {
+                opacity: 0.5;
+            }
+
+
+            #popup {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0 8);
+                display: none;
+                overflow: scroll;
+            }
+
+            #popup img {
+                width: 50%;
+            }
+
+
+
+            .luk {
+                top: 2em;
+                right: 1.5em;
+                color: black;
+                padding: 1em;
+            }
+
+            #overskrift {
+                display: flex;
+                justify-content: center;
+                padding: 20px 0 0 0;
+                font-size: 10vw;
+                font-family: 'Russo One', sans-serif;
+                color: #980707;
+            }
+
+
+            #babush {
+                position: absolute;
+                width: 20vw;
+                height: 20vh;
+                top: 1vw;
+                left: 1vw;
+            }
+
+            #poptxt {
+                margin: 0 30px 0 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+
+<header>
+    <section class="background">
+        <div id="babush">
+        </div>
+        <div id="overskrift">Bistro Бабушка</div>
+    </section>
+</header>
+
+
+<nav>
+    <button class="filter valgt" data-kategori="alle">Alle</button>
+    <button class="filter" data-kategori="forretter">Forretter</button>
+    <button class="filter" data-kategori="hovedretter">Hovedretter</button>
+    <button class="filter" data-kategori="desserter">Desserter</button>
+    <button class="filter" data-kategori="drikkevarer">Drikkevarer</button>
+
+</nav>
+
+<h1>Alle</h1>
+
+<body>
+
+    <section id="popup">
+        <article class="enkeltVare">
+            <button class="luk">X</button>
+            <img class="billedeo" src="" alt="">
+            <div id="poptxt">
+                <h2></h2>
+                <p class="pris"></p>
+                <p class="lang"></p>
+            </div>
+        </article>
+    </section>
+
+
+
+    <template>
+        <article class="grid">
+            <img src="" alt="">
+            <h2></h2>
+            <p class="kort"></p>
+            <p class="pris">Pris: </p>
+
+
+
+        </article>
+    </template>
+
+
+
+
+    <section class="vareliste"></section>
+    <script>
+        document.addEventListener("DOMContentLoaded", getjson);
+        const modtagerKloner = document.querySelector(".vareliste");
+        const temp = document.querySelector("template");
+        let varer;
+        let filter = "alle";
+        async function getjson() {
+            let jsondata = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            console.log("jsondata", jsondata);
+            minJson = await jsondata.json();
+            visJson();
+            addEventListenersToButtons();
+        }
+
+        function visJson() {
+            modtagerKloner.innerHTML = "";
+            minJson.feed.entry.forEach((vare) => {
+                if (filter == "alle" || filter == vare.gsx$kategori.$t) {
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = vare.gsx$navn.$t;
+                    klon.querySelector(".kort").textContent = vare.gsx$kort.$t;;
+                    klon.querySelector("img").src = "imgs/small/" + vare.gsx$billede.$t + "-sm.jpg";
+                    klon.querySelector(".pris").textContent += vare.gsx$pris.$t + ",-";
+                    modtagerKloner.appendChild(klon);
+                    modtagerKloner.lastElementChild.addEventListener("click", () => {
+                        visSingle(vare)
+                    });
+                }
+            })
+        }
+
+
+        function visSingle(vare) {
+            document.querySelector("#popup").style.display = "block";
+            document.querySelector("#popup .luk").addEventListener("click", lukSingle);
+            document.querySelector(".enkeltVare .billedeo").src = "imgs/small/" + vare.gsx$billede.$t + "-sm.jpg";
+            document.querySelector(".enkeltVare h2").textContent = vare.gsx$navn.$t;
+            document.querySelector(".enkeltVare .lang").textContent = vare.gsx$lang.$t;
+        }
+
+        function lukSingle() {
+            document.querySelector("#popup").style.display = "none";
+        }
+
+
+
+        function addEventListenersToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+        function filtrering() {
+            filter = this.dataset.kategori;
+            document.querySelector("h1").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visJson();
+        }
+
+    </script>
+
+</body>
+
+</html>
